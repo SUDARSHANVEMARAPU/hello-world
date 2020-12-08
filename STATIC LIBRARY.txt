@@ -1,0 +1,35 @@
+ar.exe - to create, modify, and extract from archives
+
+ar -rcs is the most likely command you would use when using a Makefile to compile a library.
+r means that if the library already exists, replace the old files within the library with your new files.
+c means create the library if it did not exist.
+s can be seen to mean 'sort' (create a sorted index of) the library, 
+so that it will be indexed and faster to access the functions in the library. Therefore, rcs can be seen to mean replace, create, sort.
+
+FORMAT: ar [OPTIONS] archive_name member_files
+
+ar c   _library_name_.a  --> is to create an archive or library 
+ar rc  _library_name_.a _file_members_ (can be of any type)--> if not exists create a library, add _file_members_ to it
+ar rcs _library_name_.a _file_members_ (can be of any type)--> if not exists create a library, add _file_members_ to it in a sorted order
+ar rcs _library_name_.a _file_members_ (can be of any type)--> if not exists create a library, add _file_members_ to it in a sorted order
+
+we can also do this
+ar rv/r  _library_name_.a _file_members_ (can be of any type)--> if not exists create a library, add _file_members_ to it
+// v is a modifier prints creating _library_name_.a
+
+to delete _library_name_.a, then " del _library_name_.a " 
+
+ar t _library_name_.a --> prints the _file_members_ of library
+ar tv _library_name_.a --> prints the _file_members_ of library with offsets
+
+ar p _library_name_.a --> prints the content in _file_members_
+ar pv _library_name_.a --> prints the content in _file_members_ with <_file_member_> heading
+
+ar dv _library_name_.a _file_member_ --> deletes the filemember and prints a conformations
+ar d _library_name_.a _file_member_ --> deletes the filemember
+
+ar xv _library_name_.a _file_member_ --> extracts the filemember
+ar xv _library_name_.a --> extracts all filemembers of library
+//using v, prints files which are extracted
+ar x _library_name_.a _file_member_ --> extracts the filemember
+ar xv _library_name_.a --> extracts all filemembers of library

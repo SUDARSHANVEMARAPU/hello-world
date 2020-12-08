@@ -28,8 +28,8 @@ ar pv _library_name_.a --> prints the content in _file_members_ with <_file_memb
 ar dv _library_name_.a _file_member_ --> deletes the filemember and prints a conformations
 ar d _library_name_.a _file_member_ --> deletes the filemember
 
+//using v, prints files which are extracted
 ar xv _library_name_.a _file_member_ --> extracts the filemember
 ar xv _library_name_.a --> extracts all filemembers of library
-//using v, prints files which are extracted
 ar x _library_name_.a _file_member_ --> extracts the filemember
-ar xv _library_name_.a --> extracts all filemembers of library
+ar x _library_name_.a --> extracts all filemembers of library

@@ -90,12 +90,21 @@ void Traverse(struct LinkedList *list){
 
 void replaceNode(struct LinkedList*list,struct Node *node,int index){
     if(node!=NULL){
-        NODE *current=node; NODE *temp2=get(list,index-1); 
-        NODE *temp1=get(list,index);  
-        current->index=temp1->index; temp2->nextNode=current;
-        current->nextNode=temp1->nextNode;
-        temp1=NULL;
-    }else{
+        if(index>0){
+            NODE *current=node; NODE *temp2=get(list,index-1); 
+            NODE *temp1=get(list,index);  
+            current->index=temp1->index; temp2->nextNode=current;
+             
+            temp1=NULL;
+        }else if(index==0){
+            NODE *current=node; NODE *temp1=get(list,index);
+            current->index=temp1->index;
+            current->nextNode=temp1->nextNode;
+            temp1=NULL;
+        }else if(index<0){
+            fprintf(stderr,"index is out of bound");
+        }
+    }else if(node==NULL){
         fprintf(stderr,"node is null");
     }
 }

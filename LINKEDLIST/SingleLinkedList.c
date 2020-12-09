@@ -94,7 +94,7 @@ void replaceNode(struct LinkedList*list,struct Node *node,int index){
             NODE *current=node; NODE *temp2=get(list,index-1); 
             NODE *temp1=get(list,index);  
             current->index=temp1->index; temp2->nextNode=current;
-             
+            current->nextNode=temp1->nextNode; 
             temp1=NULL;
         }else if(index==0){
             NODE *current=node; NODE *temp1=get(list,index);
